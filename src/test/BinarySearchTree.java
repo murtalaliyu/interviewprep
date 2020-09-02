@@ -1,5 +1,10 @@
 package test;
 
+/**
+ * BST: All left descendants <= n < all right descendants.
+ * 		
+ * 		No duplicate values.
+ */
 public class BinarySearchTree {
 
 	public static BSTNode searchIter(BSTNode root, int target) {

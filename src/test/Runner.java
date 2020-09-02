@@ -26,45 +26,7 @@ public class Runner {
 		//RunQuickSort();
 		//RunBinarySearchTree();
 		//RunDFSTreeTraversals();
-		
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		HashMap<Integer, String> alpha = new HashMap<Integer, String>();
-	    alpha.put(0, "a");
-	    alpha.put(1, "b");
-	    alpha.put(2, "c");
-	    alpha.put(3, "d");
-	    alpha.put(4, "e");
-	    alpha.put(5, "f");
-	    alpha.put(6, "g");
-	    alpha.put(7, "h");
-	    alpha.put(8, "i");
-	    alpha.put(9, "j");
-	    alpha.put(10, "k");
-	    alpha.put(11, "l");
-	    alpha.put(12, "m");
-	    alpha.put(13, "n");
-	    alpha.put(14, "o");
-	    alpha.put(15, "p");
-	    alpha.put(16, "q");
-	    alpha.put(17, "r");
-	    alpha.put(18, "s");
-	    alpha.put(19, "t");
-	    alpha.put(20, "u");
-	    alpha.put(21, "v");
-	    alpha.put(22, "w");
-	    alpha.put(23, "x");
-	    alpha.put(24, "y");
-	    alpha.put(25, "z");
-	    
-	    
-	    
-	    String string = "hellowthere";
-	    
-	    for (int i = 0; i < string.length(); i++) {
-	    	if (alpha.containsValue(string.substring(0, 1).toLowerCase())) {
-	    		
-	    	}
-	    }
+		RunBFSTreeTraversals();
 	}
 	
 	public static void RunDStack() {
@@ -305,5 +267,34 @@ public class Runner {
 
 		System.out.println("\nInorder:");
 		DFSTreeTraversals.inorder(a);
+	}
+
+	public static void RunBFSTreeTraversals() {
+		Node<Integer, String> a4 = new Node(4, "Four");
+		Node<Integer, String> b7 = new Node(7, "Seven");
+		Node<Integer, String> c9 = new Node(9, "Nine");
+		Node<Integer, String> d10 = new Node(10, "Ten");
+		Node<Integer, String> e2 = new Node(2, "Two");
+		Node<Integer, String> f6 = new Node(6, "Six");
+		Node<Integer, String> g6 = new Node(3, "Three");
+		Node<Integer, String> h2 = new Node(5, "Five");
+		
+		a4.left = b7;
+		a4.right = c9;
+		b7.left = d10;
+		b7.right = e2;
+		c9.right = f6;
+		e2.right = g6;
+		g6.left = h2;
+		
+		HashMap<Integer, ArrayList<Node<Integer,String>>> data = new HashMap<Integer, ArrayList<Node<Integer,String>>>();
+		
+		BFSTreeTraversals<Integer, String> trav = new BFSTreeTraversals<Integer, String>();
+		data = trav.levelorderTraversalUsingDFSPreorderTraversal(a4, data, 0);
+		
+		System.out.println("data values: ");
+		trav.print(data, "int");
+		System.out.println("\n\ndata names: ");
+		trav.print(data, "str");
 	}
 }

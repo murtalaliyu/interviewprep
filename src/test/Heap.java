@@ -1,5 +1,11 @@
 package test;
 
+/**
+ * A max-heap is a complete binary tree (that is, totally 
+ * filled other than the rightmost elements on the last level)
+ * where each node is bigger than its children.
+ * The root, therefore, is the maximum element in the tree.
+ */
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 

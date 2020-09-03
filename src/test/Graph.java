@@ -32,10 +32,10 @@ public class Graph {
 			
 			//add v2 to front of v1's adjacency list and
 			//add v1 to front to v2's adjacency list
-			adjLists[v1].adjList = new Neighbor(v2, adjLists[v1].adjList);
+			adjLists[v1].neighbor = new Neighbor(v2, adjLists[v1].neighbor);
  			
 			if (undirected) {
-				adjLists[v2].adjList = new Neighbor(v1, adjLists[v2].adjList);
+				adjLists[v2].neighbor = new Neighbor(v1, adjLists[v2].neighbor);
 			}
 		}
 	}
@@ -53,7 +53,7 @@ public class Graph {
 		System.out.println();
 		for (int v = 0; v < adjLists.length; v++) {
 			System.out.print(adjLists[v].name);
-			for (Neighbor nbr = adjLists[v].adjList; nbr != null; nbr=nbr.next) {
+			for (Neighbor nbr = adjLists[v].neighbor; nbr != null; nbr=nbr.next) {
 				System.out.print("--> " + adjLists[nbr.vertexNum].name);
 			}
 			System.out.println("\n");
@@ -80,7 +80,7 @@ public class Graph {
 		
 		System.out.println("visiting " + adjLists[v].name);
 		
-		for (Neighbor nbr = adjLists[v].adjList; nbr != null; nbr = nbr.next) {
+		for (Neighbor nbr = adjLists[v].neighbor; nbr != null; nbr = nbr.next) {
 			if (!visited[nbr.vertexNum]) {
 				System.out.println("\n" + adjLists[v].name + "--" + adjLists[nbr.vertexNum].name);
 				dfs(nbr.vertexNum, visited);
@@ -111,7 +111,7 @@ public class Graph {
 		
 		while (!queue.isEmpty()) {
 			int v = queue.deQeueu();
-			for (Neighbor nbr = adjLists[v].adjList; nbr != null; nbr = nbr.next) {
+			for (Neighbor nbr = adjLists[v].neighbor; nbr != null; nbr = nbr.next) {
 				System.out.println("\n" + adjLists[v].name + "--" + adjLists[nbr.vertexNum].name);
 			}
 		}

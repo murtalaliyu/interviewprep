@@ -2,10 +2,10 @@ package test;
 
 public class Vertex {
 	String name;
-	Neighbor adjList;
+	Neighbor neighbor;
 	
-	Vertex(String name, Neighbor neighbors) {
+	Vertex(String name, Neighbor neighbor) {
 		this.name = name;
-		this.adjList = neighbors;
+		this.neighbor = neighbor;
 	}
 }

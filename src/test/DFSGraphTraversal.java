@@ -21,7 +21,7 @@ public class DFSGraphTraversal {
 		
 		System.out.println("visiting " + adjLists[v].name);
 		
-		for (Neighbor nbr = adjLists[v].adjList; nbr != null; nbr = nbr.next) {
+		for (Neighbor nbr = adjLists[v].neighbor; nbr != null; nbr = nbr.next) {
 			if (!visited[nbr.vertexNum]) {
 				System.out.println("\n" + adjLists[v].name + "--" + adjLists[nbr.vertexNum].name);
 				dfs(nbr.vertexNum, visited);

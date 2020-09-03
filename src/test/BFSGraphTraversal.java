@@ -24,7 +24,8 @@ public class BFSGraphTraversal {
 		
 		while (!queue.isEmpty()) {
 			int v = queue.deQeueu();
-			for (Neighbor nbr = adjLists[v].adjList; nbr != null; nbr = nbr.next) {
+			
+			for (Neighbor nbr = adjLists[v].neighbor; nbr != null; nbr = nbr.next) {
 				System.out.println("\n" + adjLists[v].name + "--" + adjLists[nbr.vertexNum].name);
 			}
 		}

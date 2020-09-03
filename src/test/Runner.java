@@ -26,7 +26,8 @@ public class Runner {
 		//RunQuickSort();
 		//RunBinarySearchTree();
 		//RunDFSTreeTraversals();
-		RunBFSTreeTraversals();
+		//RunBFSTreeTraversals();
+		RunMergeSort();
 	}
 	
 	public static void RunDStack() {
@@ -290,11 +291,23 @@ public class Runner {
 		HashMap<Integer, ArrayList<Node<Integer,String>>> data = new HashMap<Integer, ArrayList<Node<Integer,String>>>();
 		
 		BFSTreeTraversals<Integer, String> trav = new BFSTreeTraversals<Integer, String>();
-		data = trav.levelorderTraversalUsingDFSPreorderTraversal(a4, data, 0);
+		data = trav.levelorderUsingDFSPreorder(a4, data, 0);
 		
-		System.out.println("data values: ");
+		System.out.println("data values using DFS preorder: ");
 		trav.print(data, "int");
-		System.out.println("\n\ndata names: ");
+		System.out.println("\n\ndata names using DFS preorder: ");
 		trav.print(data, "str");
+		
+		System.out.println("\n\n---------------------------------------------------\n\n");
+		
+		List<List<Node<Integer,String>>> result = new ArrayList<>();
+		result = trav.levelorderUsingQueue(a4);
+		
+		System.out.println("data values using Queue: ");
+		trav.print(result, "int");
+	}
+
+	public static void RunMergeSort() {
+		
 	}
 }

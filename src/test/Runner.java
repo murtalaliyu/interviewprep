@@ -28,6 +28,7 @@ public class Runner {
 		//RunDFSTreeTraversals();
 		//RunBFSTreeTraversals();
 		RunMergeSort();
+		
 	}
 	
 	public static void RunDStack() {
@@ -308,6 +309,16 @@ public class Runner {
 	}
 
 	public static void RunMergeSort() {
+		int[] array = {5,6,4,3,2,7,8,5,9,0,1,4,-4};
+		//int[] array = {9,8,7,6,5,4,3,2,1,0};
 		
+		MergeSort mSort = new MergeSort();
+		
+		System.out.print("Given array: ");
+		MergeSort.printArray(array);
+		
+		System.out.print("Sorted array: ");
+		mSort.sort(array, 0, array.length-1);
+		MergeSort.printArray(array);
 	}
 }

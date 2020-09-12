@@ -1,9 +1,26 @@
 package test;
 
 public class QuickSort {
+
+	public static <T extends Comparable<T>> void sort(T[] list) {
+		if (list.length <= 1) {
+			return;
+		}
+		sort(list,0,list.length-1);
+	}
 	
-	private static <T extends Comparable<T>>
-	int split(T[] list, int lo, int hi) {
+	private static <T extends Comparable<T>> void sort(T[] list, int lo, int hi) {
+		if ((hi-lo) <= 0) {	// fewer than 2 items
+			return;
+		}
+		
+		int splitPoint = split(list,lo,hi);
+		
+		sort(list,lo,splitPoint-1);	// left sub-array recursion
+		sort(list,splitPoint+1,hi);	// right sub-array recursion
+	}
+	
+	private static <T extends Comparable<T>> int split(T[] list, int lo, int hi) {
 		int left = lo+1;
 		int right = hi;
 		T pivot = list[lo];
@@ -44,24 +61,6 @@ public class QuickSort {
 		
 		// return the split point
 		return left-1;
-	}
-	
-	private static <T extends Comparable<T>> 
-	void sort(T[] list, int lo, int hi) {
-		if ((hi-lo) <= 0) {	// fewer than 2 items
-			return;
-		}
-		int splitPoint = split(list,lo,hi);
-		sort(list,lo,splitPoint-1);	// left subarray recursion
-		sort(list,splitPoint+1,hi);	// right subarray recursion
-	}
-
-	public static <T extends Comparable<T>> 
-	void sort(T[] list) {
-		if (list.length <= 1) {
-			return;
-		}
-		sort(list,0,list.length-1);
 	}
 	
 	public static void print(Integer[] list) {

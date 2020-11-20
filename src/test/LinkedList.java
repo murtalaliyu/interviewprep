@@ -5,9 +5,7 @@ public class LinkedList {
 	LinkedListNode head;
 	
 	public void insert(int data) {
-		LinkedListNode node = new LinkedListNode();
-		node.data = data;
-		node.next = null;
+		LinkedListNode node = new LinkedListNode(data);
 		
 		if (head == null) {
 			head = node;
@@ -21,9 +19,7 @@ public class LinkedList {
 	}
 	
 	public void insertAtStart(int data) {
-		LinkedListNode node = new LinkedListNode();
-		node.data = data;
-		node.next = head;
+		LinkedListNode node = new LinkedListNode(data, head);
 		head = node;
 	}
 	
@@ -33,9 +29,7 @@ public class LinkedList {
 	 * @param data
 	 */
 	public void insertAt(int index, int data) {
-		LinkedListNode node = new LinkedListNode();
-		node.data = data;
-		node.next = null;
+		LinkedListNode node = new LinkedListNode(data);
 
 		if (index == 0) {
 			insertAtStart(data);
@@ -67,6 +61,22 @@ public class LinkedList {
 		}
 	}
 	
+	public LinkedListNode reverse(LinkedListNode head) {
+		LinkedListNode prev = null;
+		LinkedListNode curr = head;
+		LinkedListNode next = null;
+		
+		while (curr != null) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		
+		head = prev;
+		return head;
+	}
+	
 	public int size() {
 		int size = 0;
 		if (head == null) {
@@ -82,11 +92,11 @@ public class LinkedList {
 		}
 	}
 	
-	public void show() {
+	public void print() {
 		LinkedListNode node = head;
 		
 		while (node.next != null) {
-			System.out.println(node.data);
+			System.out.print(node.data + " -> ");
 			node = node.next;
 		}
 		System.out.println(node.data);

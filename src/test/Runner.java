@@ -3,6 +3,7 @@ package test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
@@ -11,7 +12,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.LinkedList;
+//import java.util.LinkedList;
 
 public class Runner {
 	public static void main(String[] args) throws IOException {
@@ -27,8 +28,10 @@ public class Runner {
 		//RunBinarySearchTree();
 		//RunDFSTreeTraversals();
 		//RunBFSTreeTraversals();
-		RunMergeSort();
-		
+		//RunMergeSort();
+		//RunAmazonQ();
+		//RunBloombergQ();
+		RunLinkedListQ();
 	}
 	
 	public static void RunDStack() {
@@ -101,14 +104,16 @@ public class Runner {
 		
 		list.insertAt(4, 55);
 		
-		list.show(); 
+		list.print(); 
 		System.out.println();
 		
 		list.deleteAt(2);
 		list.deleteAt(2);
 		
-		list.show();
+		list.print();
 		System.out.println("Size: " + list.size());
+		//list.reverse(list.head);
+		//list.show();
 	}
 
 	public static void RunQueue() {
@@ -309,16 +314,264 @@ public class Runner {
 	}
 
 	public static void RunMergeSort() {
-		int[] array = {5,6,4,3,2,7,8,5,9,0,1,4,-4};
+		int[] array = {5,6,4,3,2,7,8,17,5,9,0,1,4,-4};
 		//int[] array = {9,8,7,6,5,4,3,2,1,0};
-		
-		MergeSort mSort = new MergeSort();
-		
+				
 		System.out.print("Given array: ");
 		MergeSort.printArray(array);
 		
 		System.out.print("Sorted array: ");
-		mSort.sort(array, 0, array.length-1);
+		MergeSort.sort(array, 0, array.length-1);
 		MergeSort.printArray(array);
+	}
+	
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunAmazonQ() {
+		// Amazon Fresh Promotion
+		/*
+		List<List<String>> codeList = new ArrayList();
+		
+		List<String> cL1 = new ArrayList();
+		cL1.add("a");
+		cL1.add("b");
+		cL1.add("c");
+		List<String> cL2 = new ArrayList();
+		cL1.add("d");
+		cL1.add("e");
+		cL1.add("f");
+		List<String> cL3 = new ArrayList();
+		cL1.add("g");
+		cL1.add("h");
+		cL1.add("i");
+		
+		codeList.add(cL1);
+		codeList.add(cL2);
+		codeList.add(cL3);
+		
+		
+		List<String> shoppingCart = new ArrayList();
+		shoppingCart.add("a");
+		shoppingCart.add("b");
+		shoppingCart.add("c");
+		
+		System.out.println(q1.amazon_fresh_promotion(codeList, shoppingCart));
+		*/
+		
+		// Amazon Mushic Pairs
+		/*
+		int[] songs = {60, 60, 60};
+		System.out.println(amazon_q.getSongPairCount(songs.length, songs));
+		*/
+		
+		// Items in Containers
+		/*
+		String s = "*|*|*|*";
+		int[] startIndices = {0};
+		int[] endIndices = {7};
+		
+		List<Integer> res = amazon_q.numberOfItems(s, startIndices, endIndices);
+		
+		for (int i : res) {
+			System.out.print(i + ", ");
+		}
+		*/
+		
+		// Turnstile
+		/*
+		//int[] result = amazon_q.getTimes(4, new int[] { 0, 0, 1, 5 }, new int[] { 0, 1, 1, 0 });
+		int[] result = amazon_q.getTimes(5, new int[] { 0, 1, 1, 3, 3 }, new int[] { 0, 1, 0, 0, 1 });
+		System.out.println(Arrays.toString(result));
+		*/
+		
+		// Utilization Checks
+		/*
+		List<Integer> averageUtil = new ArrayList<>();
+		averageUtil.add(25);averageUtil.add(23);averageUtil.add(1);averageUtil.add(2);averageUtil.add(3);averageUtil.add(4);
+		averageUtil.add(5);averageUtil.add(6);averageUtil.add(7);averageUtil.add(8);averageUtil.add(9);averageUtil.add(10);
+		averageUtil.add(76);averageUtil.add(80);
+		System.out.println(amazon_q.utilizationChecks(2, averageUtil));
+		*/
+		
+		// Top K Frequently Mentioned Keywords
+		/*
+		ArrayList<String> reviews = new ArrayList<String>();
+		reviews.add("zetacellular Anacell provides the best services in the city");
+		reviews.add("zetacellular has awesome services");
+		reviews.add("Best services provided by anacell, everyone should use anacell");
+		
+		ArrayList<String> keywords = new ArrayList<String>();
+		keywords.add("anacell"); keywords.add("cetracular"); keywords.add("zetacellular");
+		
+		System.out.println(amazon_q.topKFreq(reviews, keywords, 3));
+		*/
+		
+		// Transaction Logs
+		/*
+		String[] logData = {"345366 89921 45", "029323 38239 23", "38239 345366 15", "029323 38239 77", "345366 38239 23", "029323 345366 13", "38239 38239 23"};
+		int threshold = 3;
+		
+		int[] res = amazon_q.transactionLogs(logData, threshold);
+		for (int i = 0; i < res.length; i++) {
+			System.out.println(res[i]);
+		}
+		*/
+		
+		// Substrings of Size K with K-1 Distinct Chars
+		/*
+		System.out.println(amazon_q.substringsSizeKDistinctChars("wawaglknagagwunagkwkwagl", 4));
+		*/
+		
+		// Number of Islands
+		/*
+		char[][] grid1 = new char[][] { { '1', '1', '0', '0', '0' }, 
+            { '0', '1', '0', '0', '1' }, 
+            { '1', '0', '0', '1', '1' }, 
+            { '0', '0', '0', '0', '0' }, 
+            { '1', '0', '1', '0', '1' } };
+            
+		char[][] grid2 = new char[][] {
+			{'1','1','1','1','0'},
+			{'1','1','0','1','0'},
+			{'1','1','0','0','0'},
+			{'0','0','0','0','0'}
+		};
+		
+		char[][] grid3 = new char[][] {
+			{'1','0','1','0','1'},
+			{'0','0','0','0','0'},
+			{'1','0','0','0','0'},
+			{'0','0','1','0','1'}
+		};
+            
+        System.out.println(amazon_q.numIslands(grid3, 4, 5));
+        */
+		
+		// Most Common Word
+		/*
+		System.out.println(amazon_q.mostCommonWord("the Bob hit the a ball, the hit BALL flew far after it was hit.", new String[] {"hit"}));
+		*/
+		
+		// K Closest
+		/*
+		int[][] points = new int[][] {{3,3}, {5,-1}, {-2,4}};
+		int[][] res = amazon_q.kClosest(points, 2);
+		
+		for (int i = 0; i < res.length; i++) {
+			int[] point = res[i];
+			System.out.println("[" + point[0] + "," + point[1] + "]");
+		}
+		*/
+		
+		// Robotics Challenge
+		/*
+		ArrayList<String> l = new ArrayList<>();
+		
+		//test 1
+		//l.add("5"); l.add("-2"); l.add("4"); l.add("Z"); l.add("X"); l.add("9"); l.add("+"); l.add("+");
+		
+		//test 2
+		l.add("1"); l.add("2"); l.add("+"); l.add("Z");
+		
+		System.out.println(amazon_q.roboticsChallenge(4, l));
+		*/
+		
+		// Friend Circles
+		/*
+		// test 1
+		//int[][] M = new int[][] {{1,1,0}, {1,1,0}, {0,0,1}};
+		
+		// test 2
+		//int[][] M = new int[][] {{1,1,0}, {1,1,1}, {0,1,1}};
+		
+		// test 3
+		int[][] M = new int[][] {{1,0,0}, {0,1,0}, {0,0,1}};
+		
+		System.out.println(amazon_q.findCircleNum(M));
+		*/
+		
+		
+	}
+
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunBloombergQ() {
+		// Remove Adjacent Duplicates
+		/*
+		System.out.println("res: " + bg_q.removeAdjDuplicates("geeksforgeeg"));
+		*/
+		
+		// Valid anagram
+		/*
+		System.out.println(bg_q.validAnagram("art!@", "@t!ar"));
+		System.out.println((int)' ');
+		*/
+		
+		// First Unique Char
+		/*
+		System.out.println(bg_q.firstUniqChar("abcdefag"));
+		*/
+		
+		// Palindrome Number
+		/*
+		System.out.println(bg_q.isPalindrome(123454321));
+		*/
+		
+		// Add Strings
+		/*
+		System.out.println(bg_q.addStrings("123", "123"));
+		*/
+		
+		// Minimum Add to Make Parentheses Valid
+		/*
+		System.out.println(bg_q.minAddToMakeValid("()))(("));
+		*/
+		
+		// Sort Characters By Frequency
+		//System.out.println(bg_q.frequencySort("Aabb"));
+		
+		// Word Break
+		
+		List<String> wordDict = new ArrayList<>();
+		/*
+		//wordDict.add("cat"); wordDict.add("cats"); wordDict.add("and"); wordDict.add("sand"); wordDict.add("dog"); 
+		//wordDict.add("apple"); wordDict.add("pen"); wordDict.add("applepen"); wordDict.add("pine"); wordDict.add("pineapple"); 
+		wordDict.add("bloom"); wordDict.add("bloomberg"); wordDict.add("is"); wordDict.add("fun"); 
+		List<String> res = bg_q.wordBreak("bloombergisfun", wordDict);
+		
+		for (int i = 0; i < res.size(); i++) {
+			System.out.println(res.get(i));
+		}
+		*/
+		
+		// Zuma Game
+		//bg_q.findMinStep("WRRBBW", "RB");
+	}
+
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunLinkedListQ() {
+		LinkedList ll = new LinkedList();
+		ll.head = new LinkedListNode(1);
+		
+		// populate linked list
+		for (int i = 2; i <= 3; i++) {
+			ll.insert(i);
+		}
+		
+		// create a loop
+		//ll.head.next.next.next = ll.head.next.next;
+		
+		// print linked list
+		//System.out.print("List: ");
+		//ll.print();
+		
+		// print middle
+		//System.out.println("Middle: " + linked_list_q.getMiddle(ll.head).data);
+		
+		// detect loop
+		System.out.println(linked_list_q.detectLoop(ll.head, true));
+		System.out.println("loop length: " + linked_list_q.loopLength);
+		System.out.println("node at removal: " + linked_list_q.nodeAtRemoval);
 	}
 }

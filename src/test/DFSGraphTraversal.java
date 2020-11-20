@@ -5,7 +5,7 @@ public class DFSGraphTraversal {
 	Vertex[] adjLists;
 	
 	public void dfs() {
-		boolean [] visited = new boolean[adjLists.length];
+		boolean[] visited = new boolean[adjLists.length];
 		
 		for (int v = 0; v < visited.length; v++) {
 			if (!visited[v]) {

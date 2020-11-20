@@ -5,7 +5,7 @@ public class MergeSort {
 	/**
 	 * Main function that sorts arr[l..r] using merge()
 	 */
-	public void sort(int arr[], int l, int r) {
+	public static void sort(int arr[], int l, int r) {
 		if (l < r) {
 			// find the middle point
 			int m = (l + r) / 2;
@@ -24,7 +24,7 @@ public class MergeSort {
 	 * First sub-array is arr[1..m]
 	 * Second sub-array is arr[m+1..r]
 	 */
-	private void merge(int arr[], int l, int m, int r) {
+	private static void merge(int arr[], int l, int m, int r) {
 		// find sizes of 2 sub-arrays to be merged
 		int lSize = m - l + 1;
 		int rSize = r - m;

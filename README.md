@@ -1,5 +1,5 @@
 # interviewprep
-Data Structures & Algorithms Programs for interview preparation, written in Java.
+Data Structures & Algorithms programs for interview preparation, written in Java.
 
 Start at src/test/Runner.java
 

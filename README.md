@@ -9,3 +9,5 @@ BFS = Breadth First Search.
 DFS = Depth First Search.
 
 BST = Binary Search Tree.
+
+DStack = Dynamic Stack.

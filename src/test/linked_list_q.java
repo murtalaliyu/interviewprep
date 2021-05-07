@@ -90,6 +90,7 @@ public class linked_list_q {
 		LinkedListNode prev = null;
 		LinkedListNode junction = meetingNode;
 		
+		// get prev (node whose next will point to null)
 		while (meetingNode != head) {
 			prev = meetingNode;
 			meetingNode = meetingNode.next;

@@ -15,10 +15,10 @@ import java.util.TreeMap;
 //import java.util.LinkedList;
 
 public class Runner {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		//RunLinkedList();
 		//RunStack();
-		//RunDStack();
+		RunDynamicStack();
 		//RunQueue();
 		//RunHashMap();
 		//RunGraph();
@@ -31,11 +31,41 @@ public class Runner {
 		//RunMergeSort();
 		//RunAmazonQ();
 		//RunBloombergQ();
-		RunLinkedListQ();
+		//RunLinkedListQ();
+		//RunPrintX(9);
+		//RunWatch();
+		//RunQuestions();
+		//RunRecursion();
+		//RunMSFT();
 	}
 	
-	public static void RunDStack() {
-		DStack nums = new DStack();
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunRecursion() {
+		//Recursion.sayHi(5);
+		Recursion.countBackwards(7);
+	}
+	
+	public static void RunWatch() throws InterruptedException, IOException {
+		Watch w = new Watch();
+		w.RunEngine();
+	}
+	
+	public static void RunPrintX(int n) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0;  j < n; j++) {
+				if (i == j || j == n-i-1) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void RunDynamicStack() {
+		DynamicStack nums = new DynamicStack();
 		System.out.println("Size: " + nums.size());
 		nums.push(15);
 		nums.push(34);
@@ -358,7 +388,7 @@ public class Runner {
 		System.out.println(q1.amazon_fresh_promotion(codeList, shoppingCart));
 		*/
 		
-		// Amazon Mushic Pairs
+		// Amazon Music Pairs
 		/*
 		int[] songs = {60, 60, 60};
 		System.out.println(amazon_q.getSongPairCount(songs.length, songs));
@@ -560,7 +590,7 @@ public class Runner {
 		}
 		
 		// create a loop
-		//ll.head.next.next.next = ll.head.next.next;
+		ll.head.next.next.next = ll.head.next;
 		
 		// print linked list
 		//System.out.print("List: ");
@@ -573,5 +603,111 @@ public class Runner {
 		System.out.println(linked_list_q.detectLoop(ll.head, true));
 		System.out.println("loop length: " + linked_list_q.loopLength);
 		System.out.println("node at removal: " + linked_list_q.nodeAtRemoval);
+	}
+
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunQuestions() {
+		// T.Rowe Price
+		Questions qs = new Questions();
+		
+		String sentence = "The cow jumped over the moon";
+		System.out.println("{word, wordLength} : " + qs.longestWord(sentence));
+	}
+
+	/* --------------------------------------------------------------------------------------- */
+	
+	public static void RunMSFT() {
+		// ------------------------------------------------------------- pre
+		/*
+		int[] input = {3, 2, -2, 5, -3};
+		int[] input1 = {1, 2, 3, -4};
+		
+		System.out.println(msft.largestK(input));
+		System.out.println(msft.largestK(input1));
+		*/
+		
+		// ------------------------------------------------------------- Arrays 1
+		/*
+		int[] input = {5,7,1,2,8,4,3};
+		System.out.println(msft.sum(input, 19));
+		*/
+		
+		// ------------------------------------------------------------- Arrays 2
+		/*
+		int[][] matrix = new int[][]{
+			{5, 4, 3, 9},
+		    {2, 0, 7, 6},
+		    {1, 3, 4, 0},
+		    {9, 8, 3, 4}};
+		    
+		int[][] matrix2 = new int[][]{
+			{1, 5, 45, 0, 81},
+		    {6, 7, 2, 82, 8},
+		    {20, 22, 49, 5, 5},
+		    {0, 23, 50, 0, 92}};
+		    
+		msft.makeZero(matrix2);
+		msft.printMatrix(matrix2);
+		*/
+		
+		// ------------------------------------------------------------- LinkedLists 1
+		// tested at https://www.educative.io/m/add-two-integers
+		
+		// ------------------------------------------------------------- LinkedLists2
+		/*
+		int[] arr = {5,2,12,12,1};
+		System.out.print("B: "); InsertionSort.print(arr);
+		InsertionSort.insertionSort(arr);
+		System.out.print("\nA: "); InsertionSort.print(arr);
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// higherNodes test
+		/*
+		BSTNode root = new BSTNode(4);
+		root.left = new BSTNode(5);
+		root.right = new BSTNode(2);
+		root.right.left = new BSTNode(3);
+		root.right.right = new BSTNode(6);
+		System.out.println("count: " + Recursion.higherNodes(root));
+		
+		
+		BSTNode root = new BSTNode(10);
+		root.left = new BSTNode(8);
+		root.right = new BSTNode(6);
+		root.left.right = new BSTNode(3);
+		root.right.right = new BSTNode(5);
+		root.left.right.left = new BSTNode(1);
+		System.out.println("count: " + Recursion.higherNodes(root));
+		*/
+		
+		// isPalindrome
+		/*
+		String s = "aA";
+		s = s.toLowerCase();
+		System.out.println(Recursion.isPalindrome(s));
+		*/
+		
+		// recursivePowers
+		System.out.println(Recursion.recursivePowers(6, 3));
 	}
 }

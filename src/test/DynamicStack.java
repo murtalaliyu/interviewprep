@@ -1,6 +1,6 @@
 package test;
 
-public class DStack {
+public class DynamicStack {
 	int top = 0;
 	int capacity = 10;
 	int stack[] = new int[capacity];

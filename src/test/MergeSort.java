@@ -83,3 +83,61 @@ public class MergeSort {
 		System.out.println();
 	}
 }
+
+/*
+	pseudo-code: https://www.youtube.com/watch?v=TzeBrDU-JaY
+	
+	void mergeSort(int[] array) {
+		// edge case 1: empty or size of array < 2
+		if (array.length() < 2) {
+			return;
+		}
+		
+		int arraySize = array.length();
+		int mid = arraySize/2;
+		int[] leftArray = new int[mid];
+		int[] rightArray = new int[arraySize-mid];
+		
+		// fill left & right with content of array
+		for (i : 0 to mid-1) {
+			leftArray[i] = array[i];
+		}
+		for (i : mid to arraySize-1) {
+			rightArray[i] = array[i];
+		}
+		
+		mergeSort(left);
+		mergeSort(right);
+		merge(left, right, array);
+	}
+	
+	void merge(int[] left, int[] right, int[] array) {
+		int leftSize = left.length();
+		int rightSize = right.length();
+		int i, j, k = 0;
+		
+		// compare smaller of left and right and update array[k]
+		while (i < leftSize && j < rightSize) {
+			if (left[i] <= right[j]) {
+				array[k] = left[i];
+				i++;
+			} else {
+				array[k] = right[j];
+				j++;
+			}
+			k++;
+		}
+		
+		// updated array[k] with remainder of either left or right
+		while (i < leftSize) {
+			array[k] = left[i];
+			i++;
+			k++;
+		}
+		while (j < rightSize) {
+			array[k] = right[j];
+			j++;
+			k++;
+		}
+	}
+*/

@@ -74,3 +74,31 @@ public class QuickSort {
 		System.out.println("]");
 	}
 }
+
+/*
+ * pseudo-code: https://www.youtube.com/watch?v=COk73cpQbFQ&t=1077s
+ * 
+ * void quickSort(int[] array, int start, int end) {
+ * 		if (start < end) {
+ * 			int partitionIndex = partition(array, start, end);
+ * 			quickSort(array, start, partitionIndex-1);
+ * 			quickSort(array, partitionIndex+1, end);
+ * 		}
+ * }
+ * 
+ * int partition(int[] array, int start, int end) {
+ * 		pivot = array[end];
+ * 		partitionIndex = start;
+ * 		
+ * 		// end-1 because we picked the last element as pivot
+ * 		for (i : start to end-1) {
+ * 			if (array[i] <= pivot) {
+ * 				swap(array[i], array[partitionIndex]);
+ * 				partitionIndex++;
+ * 			}
+ * 		}
+ * 
+ * 		swap(array[partitioinIndex], array[pivot]);
+ * 		return partitionIndex;
+ * }
+ */

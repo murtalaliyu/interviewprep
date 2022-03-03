@@ -28,8 +28,37 @@ class Node<T,S> {
 	}
 }
 
+/*
+ * Using a queue:
+ * if root is null, return
+ * Init queue
+ * push root to queue
+ * While queue is not empty:
+ * 	pop queue
+ * 	print value
+ * 	add left & right children if not null
+ */
+public static void BFS(Node root) {
+	// edge case 1: empty root
+	if (root == null) return;
+
+	Queue<Node> q = new LinkedList<>();
+	q.add(root);
+
+	while (!q.isEmpty()) {
+		Node n = q.poll();
+		System.out.println(n.val);
+		if (n.left != null) {
+			q.add(n.left);
+		}
+		if (n.right != null) {
+			q.add(n.right);
+		}
+	}
+}
+
 /**
- * Only has level-order traversal
+ * Only has level-order traversal: Using a hashmap
  */
 public class BFSTreeTraversals<T,S> {
 
